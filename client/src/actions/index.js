@@ -1,3 +1,6 @@
+/* jshint ignore:start */
+// Code here will be ignored by JSHint.
+
 import axios from 'axios';
 import { FETCH_USER, FETCH_BLOGS, FETCH_BLOG } from './types';
 
@@ -31,3 +34,4 @@ export const fetchBlog = id => async dispatch => {
 
   dispatch({ type: FETCH_BLOG, payload: res.data });
 };
+/* jshint ignore:end */

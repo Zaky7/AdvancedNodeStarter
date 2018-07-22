@@ -10,7 +10,12 @@ require('./models/Blog');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, { useMongoClient: true });
+
+mongoose.connect(keys.mongoURI , { useMongoClient: true }).then(() => {
+  console.log('Connected to Remote mlab Database:-  '+ keys.mongoURI);
+}).catch(()=>{
+  console.log('Error in connected to remote database use local Instead');
+});
 
 const app = express();
 
